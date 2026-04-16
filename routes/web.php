@@ -43,6 +43,7 @@ Route::middleware(['auth', 'approved'])->prefix('admin')->name('admin.')->group(
     Route::middleware(['password.changed'])->group(function () {
         Route::get('/leads', [LeadsController::class, 'index'])->name('leads');
         Route::patch('/leads/{lead}/status', [LeadsController::class, 'updateStatus'])->name('leads.status');
+        Route::delete('/leads/{lead}', [LeadsController::class, 'destroy'])->name('leads.destroy');
 
         Route::get('/photos', [PhotosController::class, 'index'])->name('photos');
         Route::post('/photos', [PhotosController::class, 'store'])->name('photos.store');

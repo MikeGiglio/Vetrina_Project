@@ -70,10 +70,6 @@ class UsersController extends Controller
             return redirect()->back()->withErrors(['error' => 'Non puoi eliminare te stesso.']);
         }
 
-        if ($user->isSuperAdmin()) {
-            return redirect()->back()->withErrors(['error' => 'Non puoi eliminare un super admin.']);
-        }
-
         $user->delete();
 
         return redirect()->back()->with('success', 'Utente eliminato.');

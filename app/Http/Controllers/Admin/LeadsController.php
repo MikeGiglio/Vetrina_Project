@@ -55,4 +55,12 @@ class LeadsController extends Controller
 
         return redirect()->back()->with('success', $message);
     }
+
+    public function destroy(BookingLead $lead)
+    {
+        BlockedDate::where('lead_id', $lead->id)->delete();
+        $lead->delete();
+
+        return redirect()->back()->with('success', 'Prenotazione eliminata.');
+    }
 }

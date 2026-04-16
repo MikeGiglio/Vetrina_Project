@@ -226,7 +226,6 @@ function copyPwd(pwd) {
                             </form>
 
                             {{-- Elimina --}}
-                            @if(!$isSuper)
                             <form method="POST" action="{{ route('admin.users.destroy', $user) }}" style="display:inline;"
                                   onsubmit="return confirm('Eliminare l\'utente {{ addslashes($user->name) }}?');">
                                 @csrf @method('DELETE')
@@ -237,7 +236,6 @@ function copyPwd(pwd) {
                                     </svg>
                                 </button>
                             </form>
-                            @endif
                             @endif
                         </div>
                     </div>

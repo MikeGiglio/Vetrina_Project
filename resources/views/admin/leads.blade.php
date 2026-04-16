@@ -179,12 +179,24 @@
             </div>
         </div>
 
-        {{-- Footer: IP + tempo --}}
+        {{-- Footer: IP + tempo + elimina --}}
         <div class="lead-card-footer">
             <span class="lead-ip">{{ $lead->ip_address ?? '—' }}</span>
-            <span class="lead-time" title="{{ $lead->created_at->format('d/m/Y H:i') }}">
-                {{ $lead->created_at->diffForHumans() }}
-            </span>
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+                <span class="lead-time" title="{{ $lead->created_at->format('d/m/Y H:i') }}">
+                    {{ $lead->created_at->diffForHumans() }}
+                </span>
+                <form method="POST" action="{{ route('admin.leads.destroy', $lead) }}" style="display:inline;"
+                      onsubmit="return confirm('Eliminare la prenotazione di {{ addslashes($lead->name) }}?');">
+                    @csrf @method('DELETE')
+                    <button type="submit" class="btn-danger" style="padding:0.25rem 0.45rem;" title="Elimina">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                            <path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     @endforeach
