@@ -167,6 +167,11 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
 #navbar.scrolled .burger-btn { color: #1A1A18; }
 #navbar.scrolled .burger-btn:hover { color: #2E5E32; }
 #navbar.scrolled .scrolled-hide { background: rgba(26,26,24,0.15) !important; }
+#navbar.scrolled #mobile-lang-btn {
+    color: rgba(26,26,24,0.75);
+    border-color: rgba(26,26,24,0.2);
+    background: rgba(26,26,24,0.05);
+}
 
 .nav-link {
     font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500;
