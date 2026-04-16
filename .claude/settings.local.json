@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer require:*)",
+      "Bash(php -v)",
+      "Read(//c/ProgramData/ComposerSetup/**)",
+      "Read(//c/Users/micha/AppData/Local/Programs//**)",
+      "Bash(/c/Users/micha/.config/herd-lite/bin/composer.bat require:*)",
+      "Bash(php artisan:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

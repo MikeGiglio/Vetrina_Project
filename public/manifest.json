@@ -1,0 +1,23 @@
+{
+  "name": "Mau House 44 — Palermo",
+  "short_name": "Mau House 44",
+  "description": "Appartamento di lusso nel centro storico di Palermo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08060A",
+  "theme_color": "#08060A",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/micha/.claude/projects/c--Users-micha/memory/**)",
+      "WebFetch(domain:www.booking.com)",
+      "WebFetch(domain:www.airbnb.it)",
+      "Bash(grep -n \"\\\\.$\" \"c:\\\\Users\\\\micha\\\\Desktop\\\\LAVORO\\\\MAURIZIO_LOMBARDO\\\\MaoHouse\\\\lang\\\\it.json\")",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
