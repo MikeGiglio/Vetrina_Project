@@ -64,5 +64,6 @@ Route::middleware(['auth', 'approved'])->prefix('admin')->name('admin.')->group(
         Route::patch('/users/{user}/approve', [UsersController::class, 'approve'])->name('users.approve');
         Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
         Route::patch('/users/{user}/super', [UsersController::class, 'toggleSuperAdmin'])->name('users.super');
+        Route::patch('/users/{user}/reset-password', [UsersController::class, 'resetPassword'])->name('users.reset-password');
     });
 });

@@ -79,6 +79,22 @@ class UsersController extends Controller
         return redirect()->back()->with('success', 'Utente eliminato.');
     }
 
+    public function resetPassword(User $user)
+    {
+        $newPassword = Str::random(10);
+
+        $user->update([
+            'password'            => Hash::make($newPassword),
+            'must_change_password' => true,
+        ]);
+
+        return redirect()->route('admin.users')->with('reset_user', [
+            'name'     => $user->name,
+            'email'    => $user->email,
+            'password' => $newPassword,
+        ]);
+    }
+
     public function toggleSuperAdmin(User $user)
     {
         if ($user->id === Auth::id()) {

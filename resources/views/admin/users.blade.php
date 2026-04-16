@@ -194,6 +194,16 @@ function copyPwd(pwd) {
                                 Modifica
                             </button>
 
+                            {{-- Reset password --}}
+                            <form method="POST" action="{{ route('admin.users.reset-password', $user) }}" style="display:inline;"
+                                  onsubmit="return confirm('Resettare la password di {{ addslashes($user->name) }}?');">
+                                @csrf @method('PATCH')
+                                <button type="submit" class="btn-secondary" style="padding:0.3rem 0.65rem;font-size:0.72rem;" title="Reset password">
+                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                                    Pwd
+                                </button>
+                            </form>
+
                             {{-- Approva --}}
                             @if(!$approved)
                             <form method="POST" action="{{ route('admin.users.approve', $user) }}" style="display:inline;">
@@ -274,6 +284,63 @@ function copyPwd(pwd) {
     </div>
 
 </div>
+
+{{-- ── Modal reset password ── --}}
+@if(session('reset_user'))
+@php $ru = session('reset_user'); @endphp
+<div id="reset-modal-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;">
+    <div style="background:#0D1F0B;border:1px solid rgba(251,191,36,0.3);border-radius:1.25rem;padding:2rem 2rem 1.75rem;width:100%;max-width:460px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.6);">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
+            <div style="width:40px;height:40px;border-radius:50%;background:rgba(251,191,36,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+                <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#F0F5F1;">Password resettata</div>
+                <div style="font-family:'DM Sans',sans-serif;font-size:0.75rem;color:rgba(252,211,77,0.5);margin-top:0.1rem;">Copia e invia la nuova password all'utente</div>
+            </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(252,211,77,0.1);border-radius:0.65rem;padding:1rem;margin-bottom:1.25rem;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem;">
+                <span style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:rgba(252,211,77,0.45);letter-spacing:0.1em;text-transform:uppercase;">Utente</span>
+                <span style="font-family:'DM Sans',sans-serif;font-size:0.84rem;color:#F0F5F1;font-weight:500;">{{ $ru['name'] }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:rgba(252,211,77,0.45);letter-spacing:0.1em;text-transform:uppercase;">Email</span>
+                <span style="font-family:'DM Sans',sans-serif;font-size:0.84rem;color:#FCD34D;">{{ $ru['email'] }}</span>
+            </div>
+        </div>
+        <div style="margin-bottom:1.5rem;">
+            <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:rgba(252,211,77,0.45);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem;">Nuova Password Temporanea</div>
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+                <div style="flex:1;background:rgba(0,0,0,0.35);border:1px solid rgba(252,211,77,0.25);border-radius:0.6rem;padding:0.9rem 1rem;font-family:monospace;font-size:1.2rem;font-weight:700;color:#FCD34D;letter-spacing:0.15em;word-break:break-all;">{{ $ru['password'] }}</div>
+                <button onclick="copyResetPwd('{{ $ru['password'] }}')" id="copy-reset-btn" title="Copia password"
+                    style="flex-shrink:0;width:44px;height:44px;border-radius:0.6rem;background:rgba(252,211,77,0.12);border:1px solid rgba(252,211,77,0.25);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.2s;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FCD34D" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="copy-reset-feedback" style="font-family:'DM Sans',sans-serif;font-size:0.73rem;color:#FCD34D;margin-top:0.4rem;opacity:0;transition:opacity 0.3s;">✓ Copiata negli appunti</div>
+        </div>
+        <button onclick="document.getElementById('reset-modal-overlay').remove()"
+            style="width:100%;padding:0.7rem;background:rgba(252,211,77,0.08);border:1px solid rgba(252,211,77,0.15);border-radius:0.6rem;color:rgba(252,211,77,0.7);font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:500;cursor:pointer;transition:all 0.2s;"
+            onmouseover="this.style.background='rgba(252,211,77,0.14)'" onmouseout="this.style.background='rgba(252,211,77,0.08)'">
+            Ho copiato la password — Chiudi
+        </button>
+    </div>
+</div>
+<script>
+function copyResetPwd(pwd) {
+    navigator.clipboard.writeText(pwd).then(() => {
+        const fb = document.getElementById('copy-reset-feedback');
+        const btn = document.getElementById('copy-reset-btn');
+        fb.style.opacity = '1';
+        btn.style.background = 'rgba(252,211,77,0.25)';
+        setTimeout(() => { fb.style.opacity = '0'; btn.style.background = 'rgba(252,211,77,0.12)'; }, 2500);
+    });
+}
+</script>
+@endif
 
 {{-- ── Modal modifica utente ── --}}
 <div id="edit-modal-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9000;align-items:center;justify-content:center;padding:1rem;">

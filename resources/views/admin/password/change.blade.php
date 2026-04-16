@@ -25,6 +25,17 @@
         <form method="POST" action="{{ route('admin.password.update') }}">
             @csrf
 
+            @if(!auth()->user()->must_change_password)
+            <div style="margin-bottom:1.1rem;">
+                <label class="admin-label" for="current_password">Password Attuale</label>
+                <input type="password" id="current_password" name="current_password" class="admin-input"
+                       placeholder="La tua password attuale" required autocomplete="current-password">
+                @error('current_password')
+                <div style="font-family:'DM Sans',sans-serif;font-size:0.72rem;color:#FCA5A5;margin-top:0.35rem;">{{ $message }}</div>
+                @enderror
+            </div>
+            @endif
+
             <div style="margin-bottom:1.1rem;">
                 <label class="admin-label" for="new_password">Nuova Password</label>
                 <input type="password" id="new_password" name="new_password" class="admin-input"

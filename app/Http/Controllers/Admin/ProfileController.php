@@ -16,11 +16,21 @@ class ProfileController extends Controller
 
     public function changePassword(Request $request)
     {
-        $request->validate([
-            'new_password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        $user = Auth::user();
 
-        Auth::user()->update([
+        $rules = ['new_password' => ['required', 'string', 'min:8', 'confirmed']];
+
+        if (! $user->must_change_password) {
+            $rules['current_password'] = ['required', 'string'];
+        }
+
+        $request->validate($rules);
+
+        if (! $user->must_change_password && ! Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'La password attuale non è corretta.']);
+        }
+
+        $user->update([
             'password'             => Hash::make($request->new_password),
             'must_change_password' => false,
         ]);
