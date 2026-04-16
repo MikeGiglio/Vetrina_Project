@@ -878,7 +878,7 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
 .booking-input {
     width: 100%; padding: 0.8rem 1rem;
     background: #F5EFE4; border: 1px solid #DDD8CE; border-radius: 0.5rem;
-    color: #1A1A18; font-family: 'DM Sans', sans-serif; font-size: 0.88rem;
+    color: #1A1A18; font-family: 'DM Sans', sans-serif; font-size: 16px;
     outline: none; transition: border-color 0.25s, box-shadow 0.25s;
     -webkit-appearance: none;
 }
