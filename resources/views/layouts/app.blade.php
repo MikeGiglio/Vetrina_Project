@@ -25,6 +25,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('head')
     @stack('styles')
+
+    <!-- iubenda Privacy Controls & Cookie Solution -->
+    <script type="text/javascript" src="https://embeds.iubenda.com/widgets/595bd553-c1d2-4a46-9df7-3791621feeb3.js" async></script>
 </head>
 <body class="bg-mao-bg text-mao-cream overflow-x-hidden" style="background:#08060A;color:#F5EFE6;">
 

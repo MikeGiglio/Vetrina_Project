@@ -151,6 +151,31 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
 }
 .burger-btn:hover { color: #FDFAF5; }
 
+.nav-social-btn {
+    color: rgba(253,250,245,0.5);
+    transition: color 0.2s, transform 0.2s, opacity 0.2s;
+    line-height: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: transparent;
+}
+.nav-social-btn:hover {
+    color: #FDFAF5;
+    transform: scale(1.2);
+    background: rgba(253,250,245,0.1);
+}
+#navbar.scrolled .nav-social-btn { color: rgba(26,26,24,0.45) !important; fill: rgba(26,26,24,0.45) !important; }
+#navbar.scrolled .nav-social-btn svg { color: rgba(26,26,24,0.45) !important; fill: rgba(26,26,24,0.45) !important; }
+#navbar.scrolled .nav-social-btn:hover {
+    color: #1A1A18 !important;
+    background: rgba(26,26,24,0.08);
+    transform: scale(1.2);
+}
+#navbar.scrolled .nav-social-btn:hover svg { color: #1A1A18 !important; fill: #1A1A18 !important; }
+
 /* Navbar scrolled: sfondo avorio → tutto diventa scuro */
 #navbar.scrolled {
     background: rgba(253,250,245,0.96);
