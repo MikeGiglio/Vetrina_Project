@@ -20,7 +20,7 @@ class PhotosController extends Controller
     {
         $request->validate([
             'photos'   => ['required', 'array'],
-            'photos.*' => ['image', 'max:20480'],
+            'photos.*' => ['mimes:jpg,jpeg,png,gif,webp,avif,svg', 'max:20480'],
         ]);
 
         $maxOrder = Photo::max('sort_order') ?? 0;
