@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
+use App\Models\Review;
 
 class HomeController extends Controller
 {
@@ -15,13 +16,78 @@ class HomeController extends Controller
             'allPhotos'  => $allPhotos,
             'photoCount' => count($allPhotos),
             'extraCount' => count($allPhotos) - 5,
-            'reviews'    => self::reviewsData(),
+            'reviews'    => self::mergedReviews(),
         ]);
     }
 
     public function allReviews()
     {
-        return view('recensioni', ['reviews' => self::reviewsData()]);
+        return view('recensioni', ['reviews' => self::mergedReviews()]);
+    }
+
+    private static function mergedReviews(): array
+    {
+        return array_merge(self::dbReviews(), self::reviewsData());
+    }
+
+    private static function dbReviews(): array
+    {
+        $locale = app()->getLocale();
+        $monthsByLocale = [
+            'it' => ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'],
+            'en' => ['January','February','March','April','May','June','July','August','September','October','November','December'],
+            'fr' => ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'],
+            'es' => ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],
+            'de' => ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'],
+        ];
+        $months = $monthsByLocale[$locale] ?? $monthsByLocale['it'];
+
+        $guestLabel = match ($locale) {
+            'en'    => 'Verified guest',
+            'fr'    => 'Client vérifié',
+            'es'    => 'Huésped verificado',
+            'de'    => 'Verifizierter Gast',
+            default => 'Ospite verificato',
+        };
+
+        $badges = [
+            5 => '#2E5E32',
+            4 => '#3B82F6',
+            3 => '#F59E0B',
+            2 => '#EF4444',
+            1 => '#EF4444',
+        ];
+
+        try {
+            $approved = Review::where('is_approved', true)
+                ->whereNotNull('email_verified_at')
+                ->orderByDesc('created_at')
+                ->get();
+        } catch (\Throwable $e) {
+            return [];
+        }
+
+        return $approved->map(function ($r) use ($months, $guestLabel, $badges) {
+            $rating = max(1, min(5, (int) $r->rating));
+            $stars  = str_repeat('★', $rating);
+            $score  = (string) ($rating * 2);
+            $first  = mb_substr($r->name, 0, 1);
+            $last   = $r->surname ? mb_substr($r->surname, 0, 1) : '';
+            $name   = $r->name . ($r->surname ? ' ' . mb_substr($r->surname, 0, 1) . '.' : '');
+            $date   = ucfirst($months[(int) $r->created_at->format('n') - 1]) . ' ' . $r->created_at->format('Y');
+
+            return [
+                $name,
+                $guestLabel,
+                mb_strtoupper($first . $last),
+                $score,
+                $stars,
+                'mauhouse.it',
+                $date,
+                $r->text,
+                $badges[$rating] ?? '#2E5E32',
+            ];
+        })->toArray();
     }
 
     // [0]nome [1]luogo [2]iniziali [3]score [4]stelle [5]piattaforma [6]data [7]testo [8]colore badge

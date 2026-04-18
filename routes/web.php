@@ -1,13 +1,17 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\LeadsController;
 use App\Http\Controllers\Admin\PhotosController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ReviewsController as AdminReviewsController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\BookingLeadController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UnsubscribeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -22,6 +26,15 @@ Route::get('/lang/{locale}', function (string $locale) {
 
 // Public booking lead capture
 Route::post('/booking-lead', [BookingLeadController::class, 'store'])->name('booking.lead');
+
+// Public: review submission + OTP verification
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+Route::post('/reviews/verify', [ReviewController::class, 'verifyOtp'])->name('reviews.verify');
+Route::post('/reviews/resend', [ReviewController::class, 'resendOtp'])->name('reviews.resend');
+
+// Public: email unsubscribe (no auth)
+Route::get('/unsubscribe/{token}', [UnsubscribeController::class, 'show'])->name('unsubscribe.show');
+Route::post('/unsubscribe/{token}', [UnsubscribeController::class, 'confirm'])->name('unsubscribe.confirm');
 
 // Public: blocked dates for booking form validation
 Route::get('/blocked-dates', function () {
@@ -66,5 +79,18 @@ Route::middleware(['auth', 'approved'])->prefix('admin')->name('admin.')->group(
         Route::delete('/users/{user}', [UsersController::class, 'destroy'])->name('users.destroy');
         Route::patch('/users/{user}/super', [UsersController::class, 'toggleSuperAdmin'])->name('users.super');
         Route::patch('/users/{user}/reset-password', [UsersController::class, 'resetPassword'])->name('users.reset-password');
+
+        Route::get('/reviews', [AdminReviewsController::class, 'index'])->name('reviews.index');
+        Route::patch('/reviews/{review}/approve', [AdminReviewsController::class, 'approve'])->name('reviews.approve');
+        Route::delete('/reviews/{review}', [AdminReviewsController::class, 'destroy'])->name('reviews.destroy');
+
+        // Email campaigns + subscribers
+        Route::get('/email', [EmailController::class, 'index'])->name('email.index');
+        Route::get('/email/compose', [EmailController::class, 'compose'])->name('email.compose');
+        Route::post('/email/send', [EmailController::class, 'send'])->name('email.send');
+        Route::get('/email/subscribers', [EmailController::class, 'subscribers'])->name('email.subscribers');
+        Route::post('/email/subscribers', [EmailController::class, 'storeSubscriber'])->name('email.subscribers.store');
+        Route::post('/email/subscribers/import', [EmailController::class, 'importSubscribers'])->name('email.subscribers.import');
+        Route::delete('/email/subscribers/{subscriber}', [EmailController::class, 'destroySubscriber'])->name('email.subscribers.destroy');
     });
 });

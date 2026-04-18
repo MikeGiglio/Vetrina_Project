@@ -443,6 +443,24 @@
                 Galleria
             </a>
 
+            @php
+                try {
+                    $pendingReviewsCount = \App\Models\Review::whereNotNull('email_verified_at')->where('is_approved', false)->count();
+                } catch (\Throwable $e) {
+                    $pendingReviewsCount = 0;
+                }
+            @endphp
+            <a href="{{ route('admin.reviews.index') }}"
+               class="admin-nav-link {{ request()->routeIs('admin.reviews*') ? 'active' : '' }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                Recensioni
+                @if($pendingReviewsCount > 0)
+                    <span style="margin-left:auto;background:#EF4444;color:#fff;font-size:0.62rem;font-weight:700;padding:0.1rem 0.4rem;border-radius:999px;min-width:18px;text-align:center;">{{ $pendingReviewsCount }}</span>
+                @endif
+            </a>
+
             <a href="{{ route('admin.visitors') }}"
                class="admin-nav-link {{ request()->routeIs('admin.visitors*') ? 'active' : '' }}">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -469,6 +487,15 @@
                     <line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
                 </svg>
                 Calendario
+            </a>
+
+            <a href="{{ route('admin.email.index') }}"
+               class="admin-nav-link {{ request()->routeIs('admin.email*') ? 'active' : '' }}">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Email
             </a>
 
             <div class="nav-section-label">Sistema</div>

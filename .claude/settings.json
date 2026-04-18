@@ -5,7 +5,17 @@
       "WebFetch(domain:www.booking.com)",
       "WebFetch(domain:www.airbnb.it)",
       "Bash(grep -n \"\\\\.$\" \"c:\\\\Users\\\\micha\\\\Desktop\\\\LAVORO\\\\MAURIZIO_LOMBARDO\\\\MaoHouse\\\\lang\\\\it.json\")",
-      "Bash(python3 -c ' *)"
+      "Bash(python3 -c ' *)",
+      "Bash(php -l app/Http/Controllers/ReviewController.php)",
+      "Bash(php -l app/Http/Controllers/Admin/ReviewsController.php)",
+      "Bash(php -l app/Http/Controllers/HomeController.php)",
+      "Bash(php -l app/Models/Review.php)",
+      "Bash(php -l app/Mail/ReviewOtpMail.php)",
+      "Bash(php -l app/Http/Controllers/UnsubscribeController.php)",
+      "Bash(php -l app/Http/Controllers/Admin/EmailController.php)",
+      "Bash(php -l app/Models/EmailSubscriber.php)",
+      "Bash(php -l app/Models/EmailCampaign.php)",
+      "Bash(php -l app/Jobs/SendCampaignEmailJob.php)"
     ]
   }
 }

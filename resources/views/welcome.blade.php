@@ -529,6 +529,38 @@
                 </div>
             </div>
 
+            {{-- ── FORM LASCIA LA TUA RECENSIONE ── --}}
+            <div class="review-submit-wrap reveal">
+                <h3>{{ __('reviews.submit_title') }}</h3>
+                <p class="review-submit-sub">{{ __('reviews.submit_subtitle') }}</p>
+
+                <div class="review-form-error" id="review-form-error" role="alert"></div>
+                <div class="review-form-success" id="review-form-success" role="status"></div>
+
+                <form id="review-form" novalidate>
+                    @csrf
+                    <div class="review-star-input" id="review-stars" aria-label="{{ __('reviews.field_rating') }}">
+                        @for ($i = 1; $i <= 5; $i++)
+                            <button type="button" data-star="{{ $i }}" aria-label="{{ $i }}">★</button>
+                        @endfor
+                    </div>
+                    <input type="hidden" name="rating" id="review-rating" value="">
+                    <div class="review-form-row">
+                        <input type="text" name="name" class="review-form-input" placeholder="{{ __('reviews.field_name') }}" required maxlength="60" autocomplete="given-name">
+                        <input type="text" name="surname" class="review-form-input" placeholder="{{ __('reviews.field_surname') }}" maxlength="60" autocomplete="family-name">
+                    </div>
+                    <input type="email" name="email" class="review-form-input" placeholder="{{ __('reviews.field_email') }}" required maxlength="120" autocomplete="email" style="margin-bottom:0.75rem;">
+                    <textarea name="text" class="review-form-textarea" placeholder="{{ __('reviews.field_text') }}" required minlength="10" maxlength="1500"></textarea>
+
+                    <label class="review-consent" style="display:flex;align-items:flex-start;gap:0.55rem;margin:0.5rem 0 1rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.78rem;color:#7A8070;line-height:1.5;">
+                        <input type="checkbox" name="consent_marketing" value="1" style="margin-top:0.2rem;flex-shrink:0;accent-color:#2E5E32;">
+                        <span>{{ __('reviews.consent_label') }}</span>
+                    </label>
+
+                    <button type="submit" class="review-form-submit" id="review-submit-btn">{{ __('reviews.submit_button') }}</button>
+                </form>
+            </div>
+
             {{-- ── DESKTOP: 3 cards ── --}}
             <div class="hidden md:grid md:grid-cols-3 gap-6">
                 @foreach (array_slice($reviews, 0, 3) as $i => $r)
@@ -804,5 +836,201 @@
             </div>
         </div>
     </div>
+
+    {{-- ════════════════════════════════════════
+     OTP MODAL (review email verification)
+    ════════════════════════════════════════ --}}
+    <div id="otp-modal" role="dialog" aria-modal="true" aria-labelledby="otp-title">
+        <div class="otp-backdrop" data-otp-close></div>
+        <div class="otp-card">
+            <button type="button" class="otp-close" data-otp-close aria-label="Close">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+            <h3 id="otp-title">{{ __('reviews.otp_title') }}</h3>
+            <p class="otp-sub">{{ __('reviews.otp_sub') }} <strong id="otp-email-display"></strong></p>
+
+            <div class="review-form-error" id="otp-error" role="alert"></div>
+            <div class="review-form-success" id="otp-success" role="status"></div>
+
+            <input type="text"
+                   inputmode="numeric"
+                   autocomplete="one-time-code"
+                   pattern="[0-9]{6}"
+                   maxlength="6"
+                   class="otp-input"
+                   id="otp-input"
+                   placeholder="000000">
+
+            <button type="button" class="review-form-submit" id="otp-submit-btn" style="margin-top:1rem;">{{ __('reviews.otp_verify') }}</button>
+
+            <button type="button" class="otp-resend" id="otp-resend-btn">{{ __('reviews.otp_resend') }}</button>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        const form = document.getElementById('review-form');
+        if (!form) return;
+
+        const ratingInput    = document.getElementById('review-rating');
+        const starsWrap      = document.getElementById('review-stars');
+        const starButtons    = starsWrap.querySelectorAll('button[data-star]');
+        const submitBtn      = document.getElementById('review-submit-btn');
+        const errorBox       = document.getElementById('review-form-error');
+        const successBox     = document.getElementById('review-form-success');
+
+        const otpModal       = document.getElementById('otp-modal');
+        const otpInput       = document.getElementById('otp-input');
+        const otpSubmit      = document.getElementById('otp-submit-btn');
+        const otpResend      = document.getElementById('otp-resend-btn');
+        const otpError       = document.getElementById('otp-error');
+        const otpSuccess     = document.getElementById('otp-success');
+        const otpEmailDisp   = document.getElementById('otp-email-display');
+
+        const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+        const L = {
+            submitButton:   @json(__('reviews.submit_button')),
+            submitting:     @json(__('reviews.submitting')),
+            verifying:      @json(__('reviews.verifying')),
+            verifyBtn:      @json(__('reviews.otp_verify')),
+            errorRating:    @json(__('reviews.error_rating')),
+            errorGeneric:   @json(__('reviews.error_generic')),
+            errorLength:    @json(__('reviews.otp_error_length')),
+            success:        @json(__('reviews.success')),
+        };
+
+        let currentReviewId = null;
+        let selectedRating  = 0;
+
+        function setStars(n) {
+            selectedRating = n;
+            ratingInput.value = n;
+            starButtons.forEach(btn => {
+                btn.classList.toggle('active', parseInt(btn.dataset.star, 10) <= n);
+            });
+        }
+        starButtons.forEach(btn => {
+            btn.addEventListener('click',      () => setStars(parseInt(btn.dataset.star, 10)));
+            btn.addEventListener('mouseenter', () => {
+                const hover = parseInt(btn.dataset.star, 10);
+                starButtons.forEach(b => b.classList.toggle('active', parseInt(b.dataset.star, 10) <= hover));
+            });
+        });
+        starsWrap.addEventListener('mouseleave', () => setStars(selectedRating));
+
+        function showMsg(box, msg) { box.textContent = msg; box.style.display = 'block'; }
+        function hideMsgs() {
+            [errorBox, successBox, otpError, otpSuccess].forEach(b => { b.style.display = 'none'; b.textContent = ''; });
+        }
+        function openOtp() {
+            otpModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => otpInput.focus(), 300);
+        }
+        function closeOtp() {
+            otpModal.classList.remove('open');
+            document.body.style.overflow = '';
+            otpInput.value = '';
+            hideMsgs();
+        }
+        document.querySelectorAll('[data-otp-close]').forEach(el => el.addEventListener('click', closeOtp));
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && otpModal.classList.contains('open')) closeOtp(); });
+
+        otpInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '').slice(0, 6);
+        });
+
+        async function postJSON(url, body) {
+            const res  = await fetch(url, {
+                method: 'POST',
+                headers: { 'X-CSRF-TOKEN': csrfToken, 'Accept': 'application/json' },
+                body,
+            });
+            let json = {};
+            try { json = await res.json(); } catch (e) {}
+            return { ok: res.ok, status: res.status, json };
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideMsgs();
+
+            if (!selectedRating) { showMsg(errorBox, L.errorRating); return; }
+
+            submitBtn.disabled    = true;
+            submitBtn.textContent = L.submitting;
+
+            try {
+                const fd = new FormData(form);
+                const { ok, json } = await postJSON({!! json_encode(route('reviews.store')) !!}, fd);
+
+                if (!ok) {
+                    let msg = json.message || L.errorGeneric;
+                    if (json.errors) msg = Object.values(json.errors).flat().join(' ');
+                    showMsg(errorBox, msg);
+                    return;
+                }
+
+                currentReviewId = json.review_id;
+                otpEmailDisp.textContent = fd.get('email');
+                openOtp();
+            } catch (err) {
+                showMsg(errorBox, L.errorGeneric);
+            } finally {
+                submitBtn.disabled    = false;
+                submitBtn.textContent = L.submitButton;
+            }
+        });
+
+        otpSubmit.addEventListener('click', async () => {
+            hideMsgs();
+            const code = otpInput.value.trim();
+            if (code.length !== 6) { showMsg(otpError, L.errorLength); return; }
+
+            otpSubmit.disabled    = true;
+            otpSubmit.textContent = L.verifying;
+
+            try {
+                const fd = new FormData();
+                fd.append('review_id', currentReviewId);
+                fd.append('otp', code);
+                const { ok, json } = await postJSON({!! json_encode(route('reviews.verify')) !!}, fd);
+
+                if (!ok) { showMsg(otpError, json.message || L.errorGeneric); return; }
+
+                showMsg(otpSuccess, json.message || L.success);
+                setTimeout(() => {
+                    closeOtp();
+                    form.reset();
+                    setStars(0);
+                    showMsg(successBox, L.success);
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 1800);
+            } catch (err) {
+                showMsg(otpError, L.errorGeneric);
+            } finally {
+                otpSubmit.disabled    = false;
+                otpSubmit.textContent = L.verifyBtn;
+            }
+        });
+
+        otpResend.addEventListener('click', async () => {
+            hideMsgs();
+            if (!currentReviewId) return;
+            try {
+                const fd = new FormData();
+                fd.append('review_id', currentReviewId);
+                const { ok, json } = await postJSON({!! json_encode(route('reviews.resend')) !!}, fd);
+                if (ok) showMsg(otpSuccess, json.message || '');
+                else    showMsg(otpError,   json.message || L.errorGeneric);
+            } catch (err) {
+                showMsg(otpError, L.errorGeneric);
+            }
+        });
+    })();
+    </script>
 
 @endsection
