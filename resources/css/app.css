@@ -458,10 +458,37 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
     background: #25D366; color: #fff;
     font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700;
     border-radius: 0.5rem;
+    border: none; cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(37,211,102,0.3);
 }
 .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
+
+/* Email (booking modal) */
+.btn-email {
+    width: 100%;
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.7rem;
+    padding: 1rem 1.5rem;
+    background: #1A1A18; color: #FDFAF5;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.02em;
+    border: none; border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(26,26,24,0.2);
+}
+.btn-email:hover { background: #2E5E32; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(46,94,50,0.3); }
+.btn-email svg { flex-shrink: 0; }
+
+/* Separator "oppure" tra i due bottoni nel booking modal */
+.booking-separator {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin: 0.9rem 0;
+}
+.booking-separator-line { flex: 1; height: 1px; background: #DDD8CE; }
+.booking-separator-text {
+    font-family: 'DM Sans', sans-serif; font-size: 0.72rem;
+    color: #B0AA9E; letter-spacing: 0.08em; text-transform: uppercase;
+}
 
 /* ─────────────────────────────────────────
    GLASS / CARD (su sfondo scuro)
@@ -962,6 +989,51 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
 .booking-input.flatpickr-input { cursor: pointer; }
 .booking-input.flatpickr-input[readonly] { background: #F5EFE4; }
 
+/* Wrapper auto-generato da flatpickr con static:true (display inline-block di default).
+   Deve riempire la cella del grid e mantenere position:relative per ancorare il calendario. */
+.booking-card .flatpickr {
+    display: block !important;
+    width: 100%;
+    position: relative;
+}
+
+/* Calendario inline (static:true): posizionato sotto l'input, sopra al form */
+.flatpickr-calendar.static {
+    z-index: 100 !important;
+}
+.flatpickr-calendar.static.open {
+    top: calc(100% + 4px) !important;
+}
+
+/* Su mobile: il calendario diventa un overlay centrato a posizione fissa
+   per evitare clipping e scroll rotto nel bottom-sheet del modal. */
+@media (max-width: 640px) {
+    .flatpickr-calendar.static.open {
+        position: fixed !important;
+        top: 50% !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translate(-50%, -50%) !important;
+        width: calc(100vw - 1.5rem) !important;
+        max-width: 340px !important;
+        z-index: 1000 !important;
+        box-shadow: 0 24px 80px rgba(0,0,0,0.5) !important;
+    }
+    /* Mese e giorni leggermente più grandi per il tocco */
+    .flatpickr-calendar.static.open .flatpickr-day {
+        height: 42px !important;
+        line-height: 42px !important;
+        font-size: 0.92rem !important;
+    }
+    .flatpickr-calendar.static.open .flatpickr-weekday {
+        height: 32px !important;
+        line-height: 32px !important;
+    }
+    .flatpickr-calendar.static.open .flatpickr-current-month {
+        font-size: 1rem !important;
+    }
+}
+
 /* ─────────────────────────────────────────
    CTA SECTION — foresta scura come hero
 ───────────────────────────────────────── */
@@ -1123,9 +1195,25 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
     #booking-modal { padding: 0 !important; align-items: flex-end !important; }
     .booking-card {
         border-radius: 1.25rem 1.25rem 0 0 !important;
-        padding: 1.75rem 1.25rem 2rem !important;
-        max-height: 92vh !important;
+        padding: 1.5rem 1.1rem 1.75rem !important;
+        max-height: 94vh !important;
     }
+
+    /* Bottoni full-width più compatti ma comodi al tocco */
+    .booking-card .btn-whatsapp,
+    .booking-card .btn-email {
+        padding: 0.9rem 1.1rem !important;
+        font-size: 0.92rem !important;
+        gap: 0.55rem !important;
+        box-shadow: none !important;
+    }
+    .booking-card .btn-whatsapp:hover,
+    .booking-card .btn-email:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+    .booking-separator { margin: 0.75rem 0 !important; }
+    .booking-separator-text { font-size: 0.68rem !important; }
 
     /* Lightbox — bottoni più grandi e accessibili */
     .lightbox-prev { left: 0.4rem !important; }

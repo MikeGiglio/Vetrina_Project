@@ -177,8 +177,11 @@
   "booking.guests_placeholder": "ex. 2",
   "booking.name": "Votre prénom",
   "booking.name_placeholder": "Jean Dupont",
-  "booking.info": "En cliquant sur \"Continuer sur WhatsApp\", un chat s'ouvrira avec un message pré-rempli. L'hôte vous répondra dès que possible pour confirmer la disponibilité et le prix.",
+  "booking.info": "Choisissez votre canal préféré : WhatsApp ouvrira un chat avec un message pré-rempli, tandis qu'Email ouvrira votre client de messagerie. L'hôte vous répondra dès que possible pour confirmer la disponibilité et le prix.",
   "booking.submit": "Continuer sur WhatsApp",
+  "booking.submit_email": "Envoyer par Email",
+  "booking.or": "ou",
+  "booking.email_subject": "Demande de réservation Mau House 44",
   "booking.cancel": "Annuler",
 
   "footer.rights": "Tous droits réservés",

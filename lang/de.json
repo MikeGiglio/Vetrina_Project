@@ -177,8 +177,11 @@
   "booking.guests_placeholder": "z.B. 2",
   "booking.name": "Ihr Name",
   "booking.name_placeholder": "Max Mustermann",
-  "booking.info": "Durch Klicken auf 'Weiter zu WhatsApp' öffnet sich ein Chat mit einer vorausgefüllten Nachricht. Der Gastgeber antwortet so schnell wie möglich zur Bestätigung von Verfügbarkeit und Preis.",
+  "booking.info": "Wählen Sie Ihren bevorzugten Kanal: WhatsApp öffnet einen Chat mit einer vorausgefüllten Nachricht, E-Mail öffnet Ihr Mailprogramm. Der Gastgeber antwortet so schnell wie möglich zur Bestätigung von Verfügbarkeit und Preis.",
   "booking.submit": "Weiter zu WhatsApp",
+  "booking.submit_email": "Per E-Mail senden",
+  "booking.or": "oder",
+  "booking.email_subject": "Buchungsanfrage Mau House 44",
   "booking.cancel": "Abbrechen",
 
   "footer.rights": "Alle Rechte vorbehalten",

@@ -29,6 +29,19 @@ class ReviewController extends Controller
             'rating'            => ['required', 'integer', 'min:1', 'max:5'],
             'text'              => ['required', 'string', 'min:10', 'max:1500'],
             'consent_marketing' => ['nullable', 'boolean'],
+        ], [
+            'name.required'    => 'Il nome è obbligatorio.',
+            'name.max'         => 'Il nome è troppo lungo (max 60 caratteri).',
+            'surname.max'      => 'Il cognome è troppo lungo (max 60 caratteri).',
+            'email.required'   => "L'email è obbligatoria.",
+            'email.email'      => "Inserisci un indirizzo email valido.",
+            'email.max'        => "L'email è troppo lunga.",
+            'rating.required'  => 'Seleziona una valutazione da 1 a 5 stelle.',
+            'rating.min'       => 'La valutazione deve essere tra 1 e 5.',
+            'rating.max'       => 'La valutazione deve essere tra 1 e 5.',
+            'text.required'    => 'Scrivi il testo della recensione.',
+            'text.min'         => 'La recensione deve contenere almeno 10 caratteri.',
+            'text.max'         => 'La recensione è troppo lunga (max 1500 caratteri).',
         ]);
 
         $code = str_pad((string) random_int(0, 999999), 6, '0', STR_PAD_LEFT);

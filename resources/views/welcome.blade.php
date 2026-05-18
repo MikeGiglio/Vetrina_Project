@@ -707,6 +707,8 @@
             </div>
 
             <form id="booking-form" data-wa-number="{{ env('WHATSAPP_NUMBER', '393332299170') }}"
+                data-email="{{ env('BOOKING_EMAIL', 'mau.house44@gmail.com') }}"
+                data-email-subject="{{ __('booking.email_subject') }}"
                 data-wa-hello="{{ __('wa.hello') }}" data-wa-arrival="{{ __('wa.arrival') }}"
                 data-wa-departure="{{ __('wa.departure') }}" data-wa-nights="{{ __('wa.nights') }}"
                 data-wa-time="{{ __('wa.time') }}" data-wa-guests="{{ __('wa.guests') }}"
@@ -763,7 +765,7 @@
                     </p>
                 </div>
 
-                <button type="submit" class="btn-whatsapp" style="width:100%;justify-content:center;">
+                <button type="submit" name="booking-channel" value="whatsapp" class="btn-whatsapp" style="width:100%;justify-content:center;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -771,6 +773,20 @@
                             d="M11.999 0C5.373 0 0 5.373 0 12c0 2.118.554 4.1 1.522 5.817L.031 23.93l6.266-1.642A11.935 11.935 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.797 9.797 0 0 1-5.003-1.37l-.356-.213-3.721.976.991-3.623-.233-.371A9.818 9.818 0 0 1 2.18 12c0-5.416 4.403-9.818 9.819-9.818 5.416 0 9.818 4.402 9.818 9.818 0 5.417-4.402 9.818-9.818 9.818z" />
                     </svg>
                     {{ __('booking.submit') }}
+                </button>
+
+                <div class="booking-separator">
+                    <div class="booking-separator-line"></div>
+                    <span class="booking-separator-text">{{ __('booking.or') }}</span>
+                    <div class="booking-separator-line"></div>
+                </div>
+
+                <button type="submit" name="booking-channel" value="email" class="btn-email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    {{ __('booking.submit_email') }}
                 </button>
 
                 <button type="button" onclick="closeBookingModal()"

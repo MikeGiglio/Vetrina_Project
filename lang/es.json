@@ -177,8 +177,11 @@
   "booking.guests_placeholder": "ej. 2",
   "booking.name": "Tu nombre",
   "booking.name_placeholder": "Carlos García",
-  "booking.info": "Al hacer clic en \"Continuar en WhatsApp\" se abrirá un chat con un mensaje pre-compilado. El anfitrión te responderá lo antes posible para confirmar disponibilidad y precio.",
+  "booking.info": "Elige tu canal preferido: WhatsApp abrirá un chat con un mensaje precompilado, mientras que Email abrirá tu cliente de correo. El anfitrión te responderá lo antes posible para confirmar disponibilidad y precio.",
   "booking.submit": "Continuar en WhatsApp",
+  "booking.submit_email": "Enviar por Email",
+  "booking.or": "o",
+  "booking.email_subject": "Solicitud de reserva Mau House 44",
   "booking.cancel": "Cancelar",
 
   "footer.rights": "Todos los derechos reservados",

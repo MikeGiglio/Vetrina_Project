@@ -299,6 +299,10 @@ function initFlatpickrs(blocked) {
         minDate: 'today',
         disable: blocked,
         disableMobile: true,
+        // Inline rendering: il calendario è figlio del wrapper dell'input,
+        // così segue lo scroll del bottom-sheet modal su mobile senza
+        // posizionamenti rotti rispetto al viewport.
+        static: true,
         onDayCreate(_, __, ___, dayElem) {
             if (dayElem.classList.contains('flatpickr-disabled')) {
                 dayElem.title = 'Non disponibile';
@@ -365,8 +369,14 @@ if (bookingBackdrop) bookingBackdrop.addEventListener('click', closeBookingModal
 // ESC chiude
 window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBookingModal(); });
 
-// Submit form → WhatsApp
+// Submit form → WhatsApp o Email (in base al bottone premuto)
 if (bookingForm) {
+    // Capture which submit button was clicked (whatsapp / email)
+    let bookingChannel = 'whatsapp';
+    bookingForm.querySelectorAll('button[type="submit"][name="booking-channel"]').forEach(btn => {
+        btn.addEventListener('click', () => { bookingChannel = btn.value || 'whatsapp'; });
+    });
+
     bookingForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const arrivo   = document.getElementById('b-arrivo')?.value;
@@ -374,6 +384,7 @@ if (bookingForm) {
         const ora      = document.getElementById('b-ora')?.value;
         const persone  = document.getElementById('b-persone')?.value;
         const nome     = document.getElementById('b-nome')?.value?.trim();
+        const channel  = bookingChannel;
 
         // Validazione semplice
         if (!arrivo || !partenza || !ora || !persone || !nome) {
@@ -386,7 +397,7 @@ if (bookingForm) {
         fetch('/blocked-dates')
             .then(r => r.json())
             .then(blocked => {
-                if (blocked.length === 0) { proceedBooking(arrivo, partenza, ora, persone, nome); return; }
+                if (blocked.length === 0) { proceedBooking(arrivo, partenza, ora, persone, nome, channel); return; }
                 const blockedSet = new Set(blocked);
                 // Controlla ogni giorno del soggiorno (arrivo incluso, partenza esclusa)
                 let cur = new Date(arrivo);
@@ -400,14 +411,14 @@ if (bookingForm) {
                     }
                     cur.setDate(cur.getDate() + 1);
                 }
-                proceedBooking(arrivo, partenza, ora, persone, nome);
+                proceedBooking(arrivo, partenza, ora, persone, nome, channel);
             })
-            .catch(() => proceedBooking(arrivo, partenza, ora, persone, nome)); // in caso di errore rete, procedi
+            .catch(() => proceedBooking(arrivo, partenza, ora, persone, nome, channel)); // in caso di errore rete, procedi
         return; // blocca il flusso sincrono
     });
 
     // Funzione separata per il flusso di prenotazione effettivo
-    function proceedBooking(arrivo, partenza, ora, persone, nome) {
+    function proceedBooking(arrivo, partenza, ora, persone, nome, channel) {
 
         // Formatta date in DD/MM/YYYY
         const fmtDate = (s) => {
@@ -427,22 +438,25 @@ if (bookingForm) {
         const waConfirm   = d.waConfirm   || 'Potete confermare la disponibilità e il prezzo? Grazie! 🙏';
 
         const notti = Math.round((new Date(partenza) - new Date(arrivo)) / 86400000);
+
+        // Per email rimuoviamo gli asterischi del markdown WhatsApp
+        const stripMd = (s) => s.replace(/\*/g, '');
+        const useMd = channel === 'whatsapp';
+        const fmt = (s) => useMd ? s : stripMd(s);
+
         const msg = [
-            waHello,
+            fmt(waHello),
             ``,
-            `${waArrival} ${fmtDate(arrivo)}`,
-            `${waDeparture} ${fmtDate(partenza)} (${notti} ${waNights})`,
-            `${waTime} ${ora}`,
-            `${waGuests} ${persone}`,
-            `${waName} ${nome}`,
+            `${fmt(waArrival)} ${fmtDate(arrivo)}`,
+            `${fmt(waDeparture)} ${fmtDate(partenza)} (${notti} ${waNights})`,
+            `${fmt(waTime)} ${ora}`,
+            `${fmt(waGuests)} ${persone}`,
+            `${fmt(waName)} ${nome}`,
             ``,
-            waConfirm,
+            fmt(waConfirm),
         ].join('\n');
 
-        const waNumber = d.waNumber || '';
-        const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
-
-        // Fire-and-forget: save the lead to the DB (don't block WhatsApp redirect)
+        // Fire-and-forget: save the lead to the DB (don't block redirect)
         const csrfToken = document.querySelector('meta[name="csrf-token"]')?.content;
         if (csrfToken) {
             fetch('/booking-lead', {
@@ -457,11 +471,21 @@ if (bookingForm) {
                     departure:    partenza,
                     guests:       persone,
                     arrival_time: ora,
+                    channel:      channel,
                 }),
             }).catch(() => {}); // ignore errors silently
         }
 
-        window.open(waUrl, '_blank', 'noopener,noreferrer');
+        if (channel === 'email') {
+            const email   = d.email || 'mau.house44@gmail.com';
+            const subject = d.emailSubject || 'Richiesta prenotazione Mau House 44';
+            const mailto  = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
+            window.location.href = mailto;
+        } else {
+            const waNumber = d.waNumber || '';
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(msg)}`;
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }
         closeBookingModal();
     } // end proceedBooking
 }

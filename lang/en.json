@@ -177,8 +177,11 @@
   "booking.guests_placeholder": "e.g. 2",
   "booking.name": "Your name",
   "booking.name_placeholder": "John Smith",
-  "booking.info": "Clicking \"Continue on WhatsApp\" will open a chat with a pre-compiled message. The host will reply as soon as possible to confirm availability and price.",
+  "booking.info": "Choose your preferred channel: WhatsApp will open a chat with a pre-filled message, while Email will open your mail client. The host will reply as soon as possible to confirm availability and price.",
   "booking.submit": "Continue on WhatsApp",
+  "booking.submit_email": "Send via Email",
+  "booking.or": "or",
+  "booking.email_subject": "Booking request Mau House 44",
   "booking.cancel": "Cancel",
 
   "footer.rights": "All rights reserved",

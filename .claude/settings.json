@@ -15,7 +15,8 @@
       "Bash(php -l app/Http/Controllers/Admin/EmailController.php)",
       "Bash(php -l app/Models/EmailSubscriber.php)",
       "Bash(php -l app/Models/EmailCampaign.php)",
-      "Bash(php -l app/Jobs/SendCampaignEmailJob.php)"
+      "Bash(php -l app/Jobs/SendCampaignEmailJob.php)",
+      "Bash(node -e \"['it','en','fr','de','es'].forEach\\(l=>{const j=require\\('./lang/'+l+'.json'\\);console.log\\(l, '✓', j['booking.submit_email'], '|', j['booking.or'], '|', j['booking.email_subject']\\)}\\)\")"
     ]
   }
 }
