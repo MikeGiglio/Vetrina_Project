@@ -16,7 +16,10 @@
       "Bash(php -l app/Models/EmailSubscriber.php)",
       "Bash(php -l app/Models/EmailCampaign.php)",
       "Bash(php -l app/Jobs/SendCampaignEmailJob.php)",
-      "Bash(node -e \"['it','en','fr','de','es'].forEach\\(l=>{const j=require\\('./lang/'+l+'.json'\\);console.log\\(l, '✓', j['booking.submit_email'], '|', j['booking.or'], '|', j['booking.email_subject']\\)}\\)\")"
+      "Bash(node -e \"['it','en','fr','de','es'].forEach\\(l=>{const j=require\\('./lang/'+l+'.json'\\);console.log\\(l, '✓', j['booking.submit_email'], '|', j['booking.or'], '|', j['booking.email_subject']\\)}\\)\")",
+      "Bash(Select-Object -First 30)",
+      "Bash(node -e \"const j=require\\('./lang/it.json'\\); console.log\\('IT valid, total keys:', Object.keys\\(j\\).length, '| terms keys:', Object.keys\\(j\\).filter\\(k=>k.startsWith\\('terms.'\\)\\).length\\)\")",
+      "Bash(node -e \"['it','en','fr','de','es'].forEach\\(l=>{try{const j=require\\('./lang/'+l+'.json'\\);const tk=Object.keys\\(j\\).filter\\(k=>k.startsWith\\('terms.'\\)\\).length;console.log\\(l, '✓', tk, 'terms keys |', j['footer.terms']||'\\(no footer.terms\\)'\\)}catch\\(e\\){console.log\\(l,'✗',e.message\\)}}\\)\")"
     ]
   }
 }

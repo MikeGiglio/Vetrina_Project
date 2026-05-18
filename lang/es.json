@@ -184,7 +184,117 @@
   "booking.email_subject": "Solicitud de reserva Mau House 44",
   "booking.cancel": "Cancelar",
 
+  "nav.terms": "Términos y Condiciones",
   "footer.rights": "Todos los derechos reservados",
+  "footer.terms": "Términos y Condiciones",
+
+  "terms.page_title": "Términos y Condiciones",
+  "terms.section_label": "Documento Legal",
+  "terms.title": "Términos y Condiciones de Uso",
+  "terms.last_updated_label": "Última actualización:",
+  "terms.last_updated_date": "18 de mayo de 2026",
+  "terms.back_home": "Volver al inicio",
+  "terms.placeholder_cin": "en proceso de asignación",
+
+  "terms.intro_p1": "Los presentes Términos y Condiciones regulan el uso del sitio web mauhouse44.com (en adelante, el \"Sitio\") y las relaciones entre el Titular y los Usuarios que deseen solicitar información o reservar una estancia en el establecimiento turístico denominado \"Mau House 44\".",
+  "terms.intro_p2": "El acceso y la utilización del Sitio implican la aceptación íntegra y sin reservas de los presentes Términos. Se invita al Usuario a leerlos atentamente antes de enviar solicitudes de reserva.",
+
+  "terms.s1_title": "Identificación del Titular",
+  "terms.s1_label_name": "Denominación del establecimiento",
+  "terms.s1_label_owner": "Titular / Anfitrión",
+  "terms.s1_label_address": "Dirección del establecimiento",
+  "terms.s1_label_cin": "CIN (Código Identificativo Nacional)",
+  "terms.s1_label_email": "Email",
+  "terms.s1_label_whatsapp": "WhatsApp",
+  "terms.s1_note": "El CIN es el Código Identificativo Nacional previsto en el art. 13-ter del Decreto-Ley italiano n.º 145, de 18 de octubre de 2023 (convertido en Ley n.º 191/2023), para los alquileres de uso turístico en Italia. La actividad se ejerce en forma no empresarial, conforme a la normativa vigente sobre alquileres de corta duración.",
+
+  "terms.s2_title": "Objeto y naturaleza del servicio",
+  "terms.s2_p1": "El Sito tiene una función exclusivamente informativa y promocional relativa al establecimiento Mau House 44. No constituye en modo alguno un sistema automatizado de reserva, venta o pago en línea.",
+  "terms.s2_p2": "Las solicitudes enviadas mediante el formulario de contacto, WhatsApp o email constituyen manifestaciones de interés no vinculantes. El contrato de estancia se perfecciona únicamente con la confirmación expresa del Titular o a través de las plataformas asociadas (Booking.com, Airbnb), conforme a las respectivas condiciones contractuales.",
+
+  "terms.s3_title": "Modalidad de solicitud de la reserva",
+  "terms.s3_p1": "El Usuario puede enviar una solicitud de reserva cumplimentando el formulario disponible en el Sitio, indicando: fecha de llegada, fecha de salida, hora estimada de llegada, número de huéspedes (máximo 3) y nombre de la persona de referencia.",
+  "terms.s3_p2": "Una vez cumplimentado el formulario, el Usuario podrá optar por remitir la solicitud mediante WhatsApp o mediante email a la dirección del Titular.",
+  "terms.s3_p3": "La confirmación definitiva de la disponibilidad, la comunicación del precio final y las modalidades de pago serán facilitadas por el Titular, por regla general, en un plazo de 24 horas desde la recepción de la solicitud.",
+  "terms.s3_p4": "A las reservas efectuadas mediante Booking.com o Airbnb les serán íntegramente aplicables los términos y condiciones de las respectivas plataformas, que prevalecerán en caso de conflicto con los presentes Términos en lo que respecta al procedimiento de reserva, al pago y a la cancelación.",
+
+  "terms.s4_title": "Normas del establecimiento",
+  "terms.s4_capacity_label": "Capacidad máxima",
+  "terms.s4_capacity_body": "El establecimiento aloja a un máximo de 3 (tres) personas. No está permitido alojar a un número de personas superior al comunicado en el momento de la reserva.",
+  "terms.s4_checkin_label": "Check-in",
+  "terms.s4_checkin_body": "a partir de las 16:00. Podrán acordarse horarios distintos (check-in flexible) con el anfitrión con anterioridad a la llegada.",
+  "terms.s4_checkout_label": "Check-out",
+  "terms.s4_checkout_body": "antes de las 10:00 del día de salida.",
+  "terms.s4_rules_label": "Prohibiciones y normas de convivencia",
+  "terms.s4_rule_pets": "no se admiten animales domésticos de ninguna especie en el interior del apartamento;",
+  "terms.s4_rule_smoking": "queda prohibido fumar en el interior del apartamento y en las zonas comunes del edificio;",
+  "terms.s4_rule_parties": "no se permiten fiestas, eventos o actividades ruidosas que puedan perturbar al vecindario;",
+  "terms.s4_rule_sublet": "queda prohibido el subarriendo, la cesión a terceros y el uso del apartamento para fines distintos de la estancia turística;",
+  "terms.s4_rule_quiet": "rige la obligación de respetar el descanso nocturno desde las 22:00 hasta las 08:00, en cumplimiento de las normas de la comunidad de propietarios y de buena vecindad.",
+  "terms.s4_documents_label": "Documentos de identidad",
+  "terms.s4_documents_body": "conforme al art. 109 del Texto Único de las Leyes de Seguridad Pública italiano (TULPS, R.D. n.º 773, de 18 de junio de 1931) y sus modificaciones posteriores, cada huésped mayor de edad está obligado a facilitar un documento de identidad en vigor para su registro y comunicación a las autoridades de seguridad pública mediante el portal Alloggiati Web.",
+  "terms.s4_minors_label": "Menores",
+  "terms.s4_minors_body": "los menores de edad deberán estar acompañados en todo momento por un progenitor o tutor legal.",
+
+  "terms.s5_title": "Tasa de estancia",
+  "terms.s5_body": "La tasa de estancia, impuesto local establecido por el Ayuntamiento de Palermo, no está incluida en el precio de la estancia. Su importe, calculado en función de las tarifas municipales vigentes y del número de pernoctaciones, deberá abonarse al Titular en el momento del check-in, salvo que ya hubiera sido satisfecho a través de la plataforma de reserva (Booking.com / Airbnb).",
+
+  "terms.s6_title": "Precios, pago y facturación",
+  "terms.s6_p1": "Los precios de la estancia son dinámicos y varían en función del período, la duración, el número de huéspedes y la disponibilidad. El precio definitivo será confirmado por el Titular al confirmar la reserva y se entenderá con el IVA incluido cuando proceda.",
+  "terms.s6_p2": "Las modalidades de pago dependerán del canal de reserva utilizado:",
+  "terms.s6_channel_booking": "Booking.com / Airbnb: serán de aplicación las políticas de pago de las respectivas plataformas;",
+  "terms.s6_channel_direct": "Reserva directa: el pago se efectuará conforme a lo acordado con el Titular (p. ej., transferencia bancaria, efectivo en el check-in u otros medios indicados en el momento de la confirmación).",
+  "terms.s6_p3": "Por tratarse de un alquiler turístico ejercido en forma no empresarial, no se emite factura. A petición del Usuario, en el momento del check-out podrá expedirse un recibo no fiscal acreditativo del pago efectuado.",
+
+  "terms.s7_title": "Cancelación y modificación de la reserva",
+  "terms.s7_p1": "A las reservas efectuadas mediante Booking.com o Airbnb les serán íntegramente aplicables las políticas de cancelación y modificación de las respectivas plataformas.",
+  "terms.s7_p2_label": "Para las reservas directas, salvo acuerdo escrito en contrario entre las partes, se aplicará la siguiente política de cancelación",
+  "terms.s7_p2_rule1": "cancelación con una antelación superior a 14 días respecto de la fecha de llegada: reembolso íntegro del importe eventualmente abonado;",
+  "terms.s7_p2_rule2": "cancelación entre 14 y 7 días antes de la fecha de llegada: reembolso equivalente al 50% del importe abonado;",
+  "terms.s7_p2_rule3": "cancelación con una antelación inferior a 7 días respecto de la fecha de llegada: sin derecho a reembolso;",
+  "terms.s7_p2_rule4": "no presentación (no-show) o salida anticipada: se adeudará el importe íntegro acordado.",
+  "terms.s7_p3": "En caso de eventos de fuerza mayor no imputables a las partes (catástrofes naturales, restricciones gubernamentales, eventos sanitarios de relevancia pública), las partes colaborarán de buena fe con el fin de reprogramar la estancia o acordar un reembolso equitativo.",
+
+  "terms.s8_title": "Responsabilidad del Huésped y fianza",
+  "terms.s8_p1": "El Huésped queda obligado a utilizar el apartamento, el mobiliario y las dotaciones con la diligencia de un buen padre de familia. Será responsable de los daños causados al establecimiento, al mobiliario y a las dotaciones durante la estancia, salvo aquellos derivados del desgaste normal por el uso.",
+  "terms.s8_p2": "El Titular se reserva el derecho a exigir una fianza (depósito de garantía no remunerado) con anterioridad a la llegada o en el momento del check-in. La fianza, por el importe acordado en el momento de la reserva, será devuelta en el plazo de 7 días desde la salida, previa comprobación del estado del apartamento y deducidos los eventuales importes destinados a cubrir daños o consumos extraordinarios.",
+  "terms.s8_p3": "El Huésped se compromete a observar un comportamiento respetuoso con el vecindario y a cumplir las normas de la comunidad de propietarios, en particular las relativas al descanso nocturno.",
+
+  "terms.s9_title": "Limitación de responsabilidad del Titular",
+  "terms.s9_p1": "El Titular no responderá por las molestias o daños derivados de causas no imputables a su negligencia, tales como, a título enunciativo: interrupciones de servicios públicos (energía eléctrica, agua, gas, internet), obras en la comunidad de propietarios, fenómenos atmosféricos, huelgas o resoluciones de las autoridades.",
+  "terms.s9_p2": "El Titular no será responsable de los objetos de valor, dinero, documentos o efectos personales dejados sin custodia en el interior del apartamento. Se recomienda al Huésped custodiar personalmente sus bienes.",
+  "terms.s9_p3": "Las informaciones, imágenes y descripciones contenidas en el Sitio se facilitan de buena fe pero no constituyen oferta contractual. El Titular se reserva el derecho a introducir modificaciones en el Sitio y en sus contenidos en cualquier momento, sin obligación de preaviso.",
+
+  "terms.s10_title": "Tratamiento de los datos personales",
+  "terms.s10_p1": "El tratamiento de los datos personales recogidos a través del Sitio se rige por la <a href=\"https://www.iubenda.com/privacy-policy/21158314\" target=\"_blank\" rel=\"noopener\">Política de Privacidad</a>, redactada conforme al Reglamento UE 2016/679 (RGPD) y al Decreto Legislativo italiano n.º 196/2003 y sus modificaciones posteriores.",
+  "terms.s10_p2": "Los datos recogidos a través del formulario de reserva (nombre, fechas, número de huéspedes, dirección IP) se utilizan exclusivamente para la gestión de la solicitud y de la eventual estancia. La base jurídica del tratamiento es la ejecución de medidas precontractuales a petición del interesado y la ejecución del contrato de estancia.",
+  "terms.s10_p3": "Los datos relativos a las reseñas publicadas en el Sitio (nombre, email, contenido de la reseña) se tratan previo consentimiento expreso del Usuario, con verificación de la dirección de email mediante código OTP. El Usuario podrá solicitar en cualquier momento la supresión de su reseña contactando con el Titular.",
+
+  "terms.s11_title": "Cookies",
+  "terms.s11_body": "El Sitio utiliza cookies técnicas necesarias para su correcto funcionamiento. Las eventuales cookies de terceros (p. ej., servicios de mapas, redes sociales) se detallan en la <a href=\"https://www.iubenda.com/privacy-policy/21158314/cookie-policy\" target=\"_blank\" rel=\"noopener\">Política de Cookies</a>. El Usuario podrá gestionar sus preferencias mediante el banner de cookies al acceder al Sitio.",
+
+  "terms.s12_title": "Propiedad intelectual",
+  "terms.s12_body": "Todos los contenidos del Sitio — textos, imágenes, fotografías, marcas, logotipos, estructura gráfica y código — son propiedad del Titular o se utilizan al amparo de la correspondiente licencia. Queda prohibida su reproducción, incluso parcial, su modificación, distribución o utilización con fines comerciales sin la expresa autorización escrita del Titular.",
+
+  "terms.s13_title": "Modificaciones de los Términos",
+  "terms.s13_body": "El Titular se reserva el derecho a modificar en cualquier momento los presentes Términos a fin de adecuarlos a exigencias normativas u organizativas sobrevenidas. La versión vigente será la publicada en el Sitio en la fecha de acceso, en cuyo pie figura la fecha de la última actualización. La utilización del Sitio con posterioridad a la publicación de modificaciones implicará la aceptación de las nuevas condiciones.",
+
+  "terms.s14_title": "Legislación aplicable y fuero competente",
+  "terms.s14_p1": "Los presentes Términos y toda relación contractual que de ellos derive se regirán por la legislación italiana.",
+  "terms.s14_p2": "Para las controversias surgidas entre el Titular y Usuarios que tengan la condición de consumidores conforme al Decreto Legislativo italiano n.º 206, de 6 de septiembre de 2005 (Código de Consumo), será exclusivamente competente el fuero del lugar de residencia o domicilio del consumidor, siempre que se encuentre en Italia.",
+  "terms.s14_p3": "En todos los demás casos será exclusivamente competente el Fuero de <strong>:forum</strong>.",
+  "terms.s14_odr": "Conforme al art. 14 del Reglamento UE 524/2013, el Usuario consumidor podrá acceder a la plataforma ODR (Resolución de Litigios en Línea) de la Comisión Europea para la resolución extrajudicial de controversias: <a href=\"https://ec.europa.eu/consumers/odr\" target=\"_blank\" rel=\"noopener\">ec.europa.eu/consumers/odr</a>.",
+
+  "terms.s15_title": "Disposiciones finales",
+  "terms.s15_p1": "La eventual nulidad o ineficacia de alguna de las cláusulas de los presentes Términos no acarreará la nulidad de las restantes disposiciones, que conservarán plena validez y eficacia.",
+  "terms.s15_p2": "Las versiones de los presentes Términos en lengua distinta de la italiana se facilitan a título meramente informativo. En caso de divergencia interpretativa, prevalecerá la versión en lengua italiana.",
+
+  "terms.s16_title": "Contacto",
+  "terms.s16_email_label": "Email",
+  "terms.s16_whatsapp_label": "WhatsApp",
+  "terms.s16_address_label": "Dirección",
+
+
 
   "wa.hello": "¡Hola! 👋 Me gustaría reservar *Mau House 44*.",
   "wa.arrival": "📅 *Llegada:*",

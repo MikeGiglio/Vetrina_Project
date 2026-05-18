@@ -1440,3 +1440,128 @@ body { background: #FDFAF5; color: #1A1A18; overflow-x: hidden; }
     .otp-card { padding: 2rem 1.5rem 1.5rem; }
     .otp-input { font-size: 1.25rem; letter-spacing: 0.35rem; }
 }
+
+/* ─────────────────────────────────────────
+   TERMS & CONDITIONS PAGE
+───────────────────────────────────────── */
+.terms-content {
+    font-family: 'DM Sans', sans-serif;
+    color: #3C3C38;
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+.terms-content p { margin: 0 0 1rem; }
+.terms-content a { color: #2E5E32; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.terms-content a:hover { color: #1C3320; }
+
+.terms-intro {
+    font-size: 1rem !important;
+    color: #1A1A18 !important;
+    line-height: 1.8 !important;
+}
+
+.terms-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1A1A18;
+    margin: 2.75rem 0 1.1rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #DDD8CE;
+    line-height: 1.25;
+}
+
+.terms-card {
+    background: #fff;
+    border: 1px solid #E5DFD3;
+    border-radius: 0.75rem;
+    padding: 1.5rem 1.75rem;
+    margin: 0 0 1rem;
+    box-shadow: 0 2px 12px rgba(46,94,50,0.04);
+}
+.terms-dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.55rem 1.5rem;
+    margin: 0;
+}
+.terms-dl dt {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #7A8070;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.terms-dl dd {
+    margin: 0;
+    color: #1A1A18;
+    font-size: 0.92rem;
+    word-break: break-word;
+}
+.terms-dl dd a { color: #2E5E32; }
+
+.terms-note {
+    font-size: 0.82rem;
+    color: #7A8070;
+    font-style: italic;
+    margin: 0.25rem 0 1.5rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid #DDD8CE;
+}
+
+.terms-ul {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+    list-style: none;
+}
+.terms-ul li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+.terms-ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2E5E32;
+    font-weight: 700;
+}
+
+.terms-foot {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid #DDD8CE;
+    text-align: center;
+}
+.terms-foot p {
+    font-size: 0.82rem;
+    color: #7A8070;
+    margin-bottom: 1.25rem;
+}
+.terms-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background: #2E5E32;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    border-radius: 0.5rem;
+    transition: background 0.2s;
+}
+.terms-back-btn:hover { background: #1C3320; }
+
+@media (max-width: 640px) {
+    .terms-content { font-size: 0.92rem; }
+    .terms-h2 { font-size: 1.25rem; margin: 2.25rem 0 0.9rem; }
+    .terms-card { padding: 1.1rem 1.1rem; }
+    .terms-dl {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+    }
+    .terms-dl dt { margin-top: 0.5rem; }
+    .terms-dl dt:first-child { margin-top: 0; }
+}

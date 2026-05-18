@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/recensioni', [HomeController::class, 'allReviews'])->name('reviews.all');
+Route::view('/termini-e-condizioni', 'terms')->name('terms');
 
 Route::get('/lang/{locale}', function (string $locale) {
     if (in_array($locale, ['it', 'en', 'fr', 'es', 'de'])) {

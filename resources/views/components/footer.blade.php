@@ -15,6 +15,7 @@
                 <a href="#servizi"   style="color:inherit;transition:color 0.25s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">{{ __('nav.services') }}</a>
                 <a href="#posizione" style="color:inherit;transition:color 0.25s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">{{ __('nav.location') }}</a>
                 <button data-open-booking type="button" style="background:none;border:none;font-family:inherit;font-size:inherit;color:inherit;cursor:pointer;transition:color 0.25s;padding:0;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">{{ __('nav.book_now') }}</button>
+                <a href="{{ route('terms') }}" style="color:inherit;transition:color 0.25s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">{{ __('footer.terms') }}</a>
                 <a href="https://www.iubenda.com/privacy-policy/21158314" target="_blank" rel="noopener" style="color:inherit;transition:color 0.25s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Privacy Policy</a>
                 <a href="https://www.iubenda.com/privacy-policy/21158314/cookie-policy" target="_blank" rel="noopener" style="color:inherit;transition:color 0.25s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Cookie Policy</a>
                 @guest
