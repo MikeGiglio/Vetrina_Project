@@ -245,7 +245,7 @@
                 <em style="color:#B0AA9E;">L'anteprima apparirà qui…</em>
             </div>
             <div style="font-family:'DM Sans',sans-serif;font-size:0.7rem;color:rgba(168,212,171,0.4);margin-top:0.5rem;">
-                Ogni email avrà in automatico header con logo Mau House e footer con link disiscrizione e privacy policy.
+                Ogni email avrà in automatico header con logo My House e footer con link disiscrizione e privacy policy.
             </div>
         </div>
 

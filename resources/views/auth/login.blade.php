@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login — Mau House 44</title>
+    <title>Admin Login — My House 44</title>
     <link rel="icon" type="image/png" href="/images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,9 +63,9 @@
     <!-- Logo -->
     <div style="text-align:center;margin-bottom:2.5rem;">
         <a href="/" style="display:inline-flex;flex-direction:column;align-items:center;gap:0.75rem;text-decoration:none;">
-            <img src="/images/logo.png" alt="Mau House Logo" style="width:64px;height:64px;object-fit:contain;">
+            <img src="/images/logo.png" alt="My House Logo" style="width:64px;height:64px;object-fit:contain;">
             <div>
-                <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;letter-spacing:0.2em;color:#F5EFE6;">MAU HOUSE</div>
+                <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;letter-spacing:0.2em;color:#F5EFE6;">MY HOUSE</div>
                 <div style="font-family:'DM Sans',sans-serif;font-size:0.62rem;letter-spacing:0.45em;color:#9A8EA0;text-transform:uppercase;margin-top:0.2rem;">Pannello Admin</div>
             </div>
         </a>

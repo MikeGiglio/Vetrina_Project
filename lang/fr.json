@@ -10,7 +10,7 @@
   "hero.headline_1": "Votre refuge",
   "hero.headline_2": "au cœur",
   "hero.headline_3": "de Palerme",
-  "hero.subtitle": "Mau House 44 est un appartement élégant et chaleureux, niché au cœur de la Sicile. Bien-être, style et authenticité palermitaine.",
+  "hero.subtitle": "My House 44 est un appartement élégant et chaleureux, niché au cœur de la Sicile. Bien-être, style et authenticité palermitaine.",
   "hero.cta_book": "Réserver via WhatsApp",
   "hero.cta_explore": "Explorer l'Appartement",
   "hero.trust_superhost": "Superhost Airbnb",
@@ -47,7 +47,7 @@
   "space.title_1": "Pas seulement un",
   "space.title_em": "appartement",
   "space.title_2": "Une expérience",
-  "space.p1": "Mau House 44 est né d'un amour pour Palerme et d'une obsession pour le détail. Chaque élément a été choisi pour offrir un séjour qui allie la chaleur d'une maison au confort d'un boutique hotel de luxe.",
+  "space.p1": "My House 44 est né d'un amour pour Palerme et d'une obsession pour le détail. Chaque élément a été choisi pour offrir un séjour qui allie la chaleur d'une maison au confort d'un boutique hotel de luxe.",
   "space.p2": "Situé au cœur du Centre Historique UNESCO, au Vicolo San Carlo 44, vous êtes à deux pas des Quattro Canti, du Teatro Massimo et de tous les symboles du vrai Palerme.",
   "space.feat_size": "70 m² sur 2 étages",
   "space.feat_size_sub": "Spacieux et lumineux",
@@ -107,7 +107,7 @@
   "location.title_1": "Au cœur",
   "location.title_em": "du vrai",
   "location.title_2": "Palerme",
-  "location.p": "Mau House 44 se trouve dans le Centre Historique de Palerme, patrimoine UNESCO. À quelques pas de tout ce qui rend cette ville unique: le parfum du street food, les voix du Ballarò, l'art arabo-normand.",
+  "location.p": "My House 44 se trouve dans le Centre Historique de Palerme, patrimoine UNESCO. À quelques pas de tout ce qui rend cette ville unique: le parfum du street food, les voix du Ballarò, l'art arabo-normand.",
   "location.maps": "Voir sur Google Maps",
   "location.ballarò": "Marché de Ballarò",
   "location.ballarò_desc": "Street food authentique — 3 min",
@@ -150,7 +150,7 @@
   "reviews.otp_verify": "Vérifier et envoyer",
   "reviews.otp_resend": "Renvoyer le code",
   "reviews.otp_error_length": "Veuillez saisir le code à 6 chiffres.",
-  "reviews.consent_label": "J'accepte de recevoir occasionnellement des communications promotionnelles de Mau House 44 à l'adresse email fournie. Vous pouvez vous désinscrire à tout moment via le lien en bas de chaque email.",
+  "reviews.consent_label": "J'accepte de recevoir occasionnellement des communications promotionnelles de My House 44 à l'adresse email fournie. Vous pouvez vous désinscrire à tout moment via le lien en bas de chaque email.",
 
   "cta.section_label": "Réservez Votre Séjour",
   "cta.title_1": "Prêt à vivre",
@@ -160,7 +160,7 @@
   "cta.footer_note": "Annulation flexible · Réponse garantie sous 24h · Sans commission",
 
   "booking.section_label": "Réservation",
-  "booking.title": "Mau House 44",
+  "booking.title": "My House 44",
   "booking.error": "Veuillez remplir tous les champs pour continuer.",
   "booking.error_blocked": "Désolé, certaines dates sélectionnées ne sont pas disponibles. Veuillez choisir une autre période.",
   "booking.arrival": "Date d'arrivée",
@@ -181,7 +181,7 @@
   "booking.submit": "Continuer sur WhatsApp",
   "booking.submit_email": "Envoyer par Email",
   "booking.or": "ou",
-  "booking.email_subject": "Demande de réservation Mau House 44",
+  "booking.email_subject": "Demande de réservation My House 44",
   "booking.cancel": "Annuler",
 
   "nav.terms": "Conditions Générales",
@@ -195,7 +195,7 @@
   "terms.back_home": "Retour à l'accueil",
   "terms.placeholder_cin": "en cours d'attribution",
 
-  "terms.intro_p1": "Les présentes Conditions Générales régissent l'utilisation du site internet mauhouse44.com (ci-après le « Site ») ainsi que les rapports entre le Titulaire et les Utilisateurs qui souhaitent demander des informations ou réserver un séjour au sein de la structure d'hébergement dénommée « Mau House 44 ».",
+  "terms.intro_p1": "Les présentes Conditions Générales régissent l'utilisation du site internet myhouse44.com (ci-après le « Site ») ainsi que les rapports entre le Titulaire et les Utilisateurs qui souhaitent demander des informations ou réserver un séjour au sein de la structure d'hébergement dénommée « My House 44 ».",
   "terms.intro_p2": "L'accès au Site et son utilisation impliquent l'acceptation pleine et entière des présentes Conditions. L'Utilisateur est invité à les lire attentivement avant d'envoyer toute demande de réservation.",
 
   "terms.s1_title": "Identification du Titulaire",
@@ -208,7 +208,7 @@
   "terms.s1_note": "Le CIN est le Code d'Identification National prévu par l'article 13-ter du Décret-Loi italien n° 145 du 18 octobre 2023 (converti par la Loi italienne n° 191/2023) pour les locations à usage touristique en Italie. L'activité est exercée à titre non professionnel, conformément à la réglementation en vigueur en matière de locations de courte durée.",
 
   "terms.s2_title": "Objet et nature du service",
-  "terms.s2_p1": "Le Site a une fonction exclusivement informative et promotionnelle relative à la structure Mau House 44. Il ne constitue en aucun cas un système automatisé de réservation, de vente ou de paiement en ligne.",
+  "terms.s2_p1": "Le Site a une fonction exclusivement informative et promotionnelle relative à la structure My House 44. Il ne constitue en aucun cas un système automatisé de réservation, de vente ou de paiement en ligne.",
   "terms.s2_p2": "Les demandes envoyées au moyen du formulaire de contact, via WhatsApp ou par email constituent des manifestations d'intérêt non contraignantes. Le contrat de séjour ne se forme qu'avec la confirmation expresse du Titulaire ou par l'intermédiaire des plateformes partenaires (Booking.com, Airbnb), selon les conditions contractuelles respectives.",
 
   "terms.s3_title": "Modalités de demande de réservation",
@@ -295,7 +295,7 @@
 
   "footer.rights": "Tous droits réservés",
 
-  "wa.hello": "Bonjour! 👋 Je voudrais réserver *Mau House 44*.",
+  "wa.hello": "Bonjour! 👋 Je voudrais réserver *My House 44*.",
   "wa.arrival": "📅 *Arrivée:*",
   "wa.departure": "📅 *Départ:*",
   "wa.nights": "nuits",

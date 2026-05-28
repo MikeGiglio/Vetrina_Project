@@ -10,7 +10,7 @@
   "hero.headline_1": "Your retreat",
   "hero.headline_2": "at the heart",
   "hero.headline_3": "of Palermo",
-  "hero.subtitle": "Mau House 44 is an elegant and welcoming apartment nestled in the beating heart of Sicily. Comfort, style and authentic Palermitan atmosphere.",
+  "hero.subtitle": "My House 44 is an elegant and welcoming apartment nestled in the beating heart of Sicily. Comfort, style and authentic Palermitan atmosphere.",
   "hero.cta_book": "Book via WhatsApp",
   "hero.cta_explore": "Explore the Apartment",
   "hero.trust_superhost": "Airbnb Superhost",
@@ -47,7 +47,7 @@
   "space.title_1": "Not just a",
   "space.title_em": "apartment",
   "space.title_2": "An experience",
-  "space.p1": "Mau House 44 was born from a love of Palermo and an obsession with detail. Every element has been chosen to offer a stay that combines the warmth of home with the comfort of a luxury boutique hotel.",
+  "space.p1": "My House 44 was born from a love of Palermo and an obsession with detail. Every element has been chosen to offer a stay that combines the warmth of home with the comfort of a luxury boutique hotel.",
   "space.p2": "Located in the heart of the UNESCO Historic Centre, at Vicolo San Carlo 44, you are a short walk from the Quattro Canti, the Teatro Massimo and all the symbols of authentic Palermo.",
   "space.feat_size": "70 m² over 2 floors",
   "space.feat_size_sub": "Spacious and bright",
@@ -107,7 +107,7 @@
   "location.title_1": "At the heart",
   "location.title_em": "of authentic",
   "location.title_2": "Palermo",
-  "location.p": "Mau House 44 is located in Palermo's UNESCO Historic Centre. Steps away from everything that makes this city unique: the scent of street food, the voices of Ballarò, Arab-Norman art.",
+  "location.p": "My House 44 is located in Palermo's UNESCO Historic Centre. Steps away from everything that makes this city unique: the scent of street food, the voices of Ballarò, Arab-Norman art.",
   "location.maps": "View on Google Maps",
   "location.ballarò": "Ballarò Market",
   "location.ballarò_desc": "Authentic street food — 3 min",
@@ -150,7 +150,7 @@
   "reviews.otp_verify": "Verify & submit",
   "reviews.otp_resend": "Resend code",
   "reviews.otp_error_length": "Please enter the 6-digit code.",
-  "reviews.consent_label": "I agree to receive occasional promotional communications from Mau House 44 at the email address provided. You can unsubscribe at any time via the link at the bottom of every email.",
+  "reviews.consent_label": "I agree to receive occasional promotional communications from My House 44 at the email address provided. You can unsubscribe at any time via the link at the bottom of every email.",
 
   "cta.section_label": "Book Your Stay",
   "cta.title_1": "Ready to experience",
@@ -160,7 +160,7 @@
   "cta.footer_note": "Flexible cancellation · Response guaranteed within 24h · No fees",
 
   "booking.section_label": "Booking",
-  "booking.title": "Mau House 44",
+  "booking.title": "My House 44",
   "booking.error": "Please fill in all fields to continue.",
   "booking.error_blocked": "Sorry, some of the selected dates are not available. Please choose a different period.",
   "booking.arrival": "Arrival date",
@@ -181,7 +181,7 @@
   "booking.submit": "Continue on WhatsApp",
   "booking.submit_email": "Send via Email",
   "booking.or": "or",
-  "booking.email_subject": "Booking request Mau House 44",
+  "booking.email_subject": "Booking request My House 44",
   "booking.cancel": "Cancel",
 
   "nav.terms": "Terms & Conditions",
@@ -196,7 +196,7 @@
   "terms.back_home": "Back to home",
   "terms.placeholder_cin": "registration pending",
 
-  "terms.intro_p1": "These Terms and Conditions govern the use of the website mauhouse44.com (the \"Site\") and the relationship between the Host and Users who wish to request information or book a stay at the accommodation known as \"Mau House 44\".",
+  "terms.intro_p1": "These Terms and Conditions govern the use of the website myhouse44.com (the \"Site\") and the relationship between the Host and Users who wish to request information or book a stay at the accommodation known as \"My House 44\".",
   "terms.intro_p2": "Accessing and using the Site implies full and unconditional acceptance of these Terms. Users are invited to read them carefully before submitting any booking request.",
 
   "terms.s1_title": "Host Identification",
@@ -209,7 +209,7 @@
   "terms.s1_note": "The CIN is the National Identification Code required under art. 13-ter of Italian Law-Decree 145/2023 (converted into Law 191/2023) for short-term tourist rentals in Italy. This activity is carried out on a non-commercial basis under the applicable Italian regulations on short rentals.",
 
   "terms.s2_title": "Purpose and nature of the service",
-  "terms.s2_p1": "The Site has an exclusively informational and promotional purpose relating to the Mau House 44 property. It does not constitute an automated booking, sales or online payment system in any way.",
+  "terms.s2_p1": "The Site has an exclusively informational and promotional purpose relating to the My House 44 property. It does not constitute an automated booking, sales or online payment system in any way.",
   "terms.s2_p2": "Requests submitted via the contact form, WhatsApp or email constitute non-binding expressions of interest. The accommodation contract is concluded solely upon the express confirmation of the Host or through partner platforms (Booking.com, Airbnb), according to their respective contractual terms.",
 
   "terms.s3_title": "How to request a booking",
@@ -294,7 +294,7 @@
   "terms.s16_whatsapp_label": "WhatsApp",
   "terms.s16_address_label": "Address",
 
-  "wa.hello": "Hello! 👋 I'd like to book *Mau House 44*.",
+  "wa.hello": "Hello! 👋 I'd like to book *My House 44*.",
   "wa.arrival": "📅 *Arrival:*",
   "wa.departure": "📅 *Departure:*",
   "wa.nights": "nights",

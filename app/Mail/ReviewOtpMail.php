@@ -19,7 +19,7 @@ class ReviewOtpMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->code . ' è il tuo codice di verifica - Mau House 44',
+            subject: $this->code . ' è il tuo codice di verifica - My House 44',
         );
     }
 

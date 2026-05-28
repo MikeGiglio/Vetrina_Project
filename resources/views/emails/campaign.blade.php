@@ -13,7 +13,7 @@
                     {{-- Header --}}
                     <tr>
                         <td style="background:#1C2E1A;padding:28px 32px;text-align:center;">
-                            <div style="font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;letter-spacing:0.08em;color:#F5EFE6;">MAU HOUSE</div>
+                            <div style="font-family:'Playfair Display',Georgia,serif;font-size:24px;font-weight:700;letter-spacing:0.08em;color:#F5EFE6;">MY HOUSE</div>
                             <div style="font-size:11px;letter-spacing:0.15em;color:#A8D4AB;margin-top:4px;">PALERMO · APPARTAMENTO 44</div>
                         </td>
                     </tr>
@@ -33,7 +33,7 @@
                     <tr>
                         <td style="padding:20px 32px 28px;border-top:1px solid #eee;background:#FAF7F0;">
                             <p style="margin:0 0 10px;font-size:12px;color:#777;text-align:center;line-height:1.5;">
-                                Ricevi questa email perché ti sei registrato sul sito di Mau House 44<br>
+                                Ricevi questa email perché ti sei registrato sul sito di My House 44<br>
                                 o hai espresso consenso esplicito tramite il form recensioni.
                             </p>
                             <p style="margin:0 0 6px;font-size:12px;color:#777;text-align:center;">
@@ -42,7 +42,7 @@
                                 <a href="https://www.iubenda.com/privacy-policy/21158314" style="color:#2E5E32;text-decoration:underline;">Privacy Policy</a>
                             </p>
                             <p style="margin:12px 0 0;font-size:11px;color:#aaa;text-align:center;line-height:1.5;">
-                                Mau House 44 · Vicolo San Carlo, 44 · 90133 Palermo (PA) · Italia
+                                My House 44 · Vicolo San Carlo, 44 · 90133 Palermo (PA) · Italia
                             </p>
                         </td>
                     </tr>

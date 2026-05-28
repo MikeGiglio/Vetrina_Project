@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name'     => env('BUSINESS_NAME', 'Mau House 44'),
+    'name'     => env('BUSINESS_NAME', 'My House 44'),
     'owner'    => env('BUSINESS_OWNER', 'Maurizio Lombardo'),
     'address'  => env('BUSINESS_ADDRESS', 'Vicolo San Carlo, 44 - 90133 Palermo (PA), Italia'),
-    'email'    => env('BUSINESS_EMAIL', 'mau.house44@gmail.com'),
+    'email'    => env('BUSINESS_EMAIL', 'info@myhouse44.com'),
     'whatsapp' => env('WHATSAPP_NUMBER', '393332299170'),
 
     // CIN (Codice Identificativo Nazionale) — obbligatorio per locazioni turistiche

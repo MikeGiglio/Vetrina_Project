@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Mau House 44 — Appartamento di lusso a Palermo')
+@section('title', 'My House 44 — Appartamento di lusso a Palermo')
 
 @section('content')
 
@@ -242,7 +242,7 @@
 
                 <div class="reveal-right" style="position:relative;">
                     <div style="aspect-ratio:4/5;border-radius:1.5rem;overflow:hidden;position:relative;">
-                        <img src="/images/house/1.png" alt="Mau House 44 — Palermo"
+                        <img src="/images/house/1.png" alt="My House 44 — Palermo"
                             style="width:100%;height:100%;object-fit:cover;object-position:center;" loading="lazy">
                         <div style="position:absolute;bottom:2rem;left:2rem;right:2rem;">
                             <div
@@ -253,7 +253,7 @@
                                         {{ __('space.card_available') }}</div>
                                     <div
                                         style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#1A1A18;margin-top:0.25rem;">
-                                        Mau House 44</div>
+                                        My House 44</div>
                                 </div>
                                 <div style="text-align:right;">
                                     <div class="stars" style="font-size:0.85rem;">★ 9.6</div>
@@ -452,7 +452,7 @@
                             src="https://maps.google.com/maps?q=Vicolo+San+Carlo+44,+Palermo,+Italy&t=&z=16&ie=UTF8&iwloc=&output=embed"
                             width="100%" height="100%" style="border:0;display:block;width:100%;height:100%;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            title="Mau House 44 — Vicolo San Carlo 44, Palermo"></iframe>
+                            title="My House 44 — Vicolo San Carlo 44, Palermo"></iframe>
                     </div>
                     {{-- Chip distanze --}}
                     <div style="position:absolute;top:2rem;right:-1rem;" class="hidden lg:block">
@@ -635,7 +635,7 @@
             <div class="reveal" style="margin-bottom:2rem;">
                 <div
                     style="display:inline-block;padding:1.25rem;background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.15);border-radius:50%;">
-                    <img src="/images/logo.png" alt="Mau House Logo" style="width:48px;height:48px;object-fit:contain;">
+                    <img src="/images/logo.png" alt="My House Logo" style="width:48px;height:48px;object-fit:contain;">
                 </div>
             </div>
 
@@ -707,7 +707,7 @@
             </div>
 
             <form id="booking-form" data-wa-number="{{ env('WHATSAPP_NUMBER', '393332299170') }}"
-                data-email="{{ env('BOOKING_EMAIL', 'mau.house44@gmail.com') }}"
+                data-email="{{ env('BOOKING_EMAIL', 'info@myhouse44.com') }}"
                 data-email-subject="{{ __('booking.email_subject') }}"
                 data-wa-hello="{{ __('wa.hello') }}" data-wa-arrival="{{ __('wa.arrival') }}"
                 data-wa-departure="{{ __('wa.departure') }}" data-wa-nights="{{ __('wa.nights') }}"

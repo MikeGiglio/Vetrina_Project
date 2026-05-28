@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mau House 44 — Appartamento nel centro storico di Palermo. Prenota direttamente su WhatsApp.">
+    <meta name="description" content="My House 44 — Appartamento nel centro storico di Palermo. Prenota direttamente su WhatsApp.">
     <meta name="theme-color" content="#16A34A">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Mau House 44 — Palermo')</title>
+    <title>@yield('title', 'My House 44 — Palermo')</title>
 
     <!-- Favicon & PWA -->
     <link rel="icon" type="image/png" href="/images/icon-192.png">
@@ -15,7 +15,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Mau House 44">
+    <meta name="apple-mobile-web-app-title" content="My House 44">
 
     <!-- Preconnect fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@
     <div class="loader-cat">
         <div class="loader-ring"></div>
         <div class="loader-ring-2"></div>
-        <img src="/images/logo.png" alt="Mau House Logo" style="width:80px;height:80px;object-fit:contain;">
+        <img src="/images/logo.png" alt="My House Logo" style="width:80px;height:80px;object-fit:contain;">
     </div>
     <div class="text-center">
         <div class="loader-title">MAU <span>HOUSE</span></div>

@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Admin di Mau House 44
+        // Admin di My House 44
         User::factory()->create([
             'name' => 'Maurizio Lombardo',
             'email' => 'admin@maohouse44.it',

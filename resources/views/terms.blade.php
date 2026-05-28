@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('terms.page_title') . ' — Mau House 44 · Palermo')
+@section('title', __('terms.page_title') . ' — My House 44 · Palermo')
 
 @section('content')
 

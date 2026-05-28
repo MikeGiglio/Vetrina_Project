@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disiscrizione — Mau House 44</title>
+<title>Disiscrizione — My House 44</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -99,7 +99,7 @@
 </head>
 <body>
     <div class="card">
-        <div class="logo-title">MAU HOUSE</div>
+        <div class="logo-title">MY HOUSE</div>
         <div class="logo-sub">PALERMO · APPARTAMENTO 44</div>
 
         @if($notFound)
@@ -117,15 +117,15 @@
             @if($subscriber)
                 <p>L'indirizzo</p>
                 <div class="email-chip">{{ $subscriber->email }}</div>
-                <p>è stato rimosso dalla nostra lista. Non riceverai più comunicazioni promozionali da Mau House 44.</p>
+                <p>è stato rimosso dalla nostra lista. Non riceverai più comunicazioni promozionali da My House 44.</p>
             @else
-                <p>Non riceverai più comunicazioni promozionali da Mau House 44.</p>
+                <p>Non riceverai più comunicazioni promozionali da My House 44.</p>
             @endif
             <a href="{{ url('/') }}" class="back-link">Torna al sito</a>
 
         @else
             <h1>Confermi la disiscrizione?</h1>
-            <p>Stai per rimuovere il seguente indirizzo dalla lista delle comunicazioni Mau House 44:</p>
+            <p>Stai per rimuovere il seguente indirizzo dalla lista delle comunicazioni My House 44:</p>
             <div class="email-chip">{{ $subscriber->email }}</div>
             <p>Non riceverai più email promozionali. Questa azione può essere annullata solo contattandoci direttamente.</p>
 

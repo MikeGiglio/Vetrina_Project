@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Admin') — Mau House 44</title>
+    <title>@yield('title', 'Admin') — My House 44</title>
     <link rel="icon" type="image/png" href="/images/icon-192-admin.png">
     <link rel="apple-touch-icon" href="/images/icon-192-admin.png">
     <meta name="theme-color" content="#1C2E1A">
@@ -405,9 +405,9 @@
     <aside class="admin-sidebar">
         <div class="logo-wrap">
             <a href="{{ route('admin.dashboard') }}" class="logo-link">
-                <img src="/images/logo.png" alt="Mau House Logo" style="width:32px;height:32px;object-fit:contain;">
+                <img src="/images/logo.png" alt="My House Logo" style="width:32px;height:32px;object-fit:contain;">
                 <div>
-                    <div class="logo-title">MAU HOUSE 44</div>
+                    <div class="logo-title">MY HOUSE 44</div>
                     <div class="logo-sub">Admin Panel</div>
                 </div>
             </a>
@@ -550,7 +550,7 @@
                 </button>
                 <div>
                     <div class="topbar-title">@yield('page-title', 'Dashboard')</div>
-                    <div class="topbar-breadcrumb">Mau House 44 &rsaquo; @yield('page-title', 'Dashboard')</div>
+                    <div class="topbar-breadcrumb">My House 44 &rsaquo; @yield('page-title', 'Dashboard')</div>
                 </div>
             </div>
             <div class="topbar-avatar">{{ strtoupper(substr(auth()->user()->name, 0, 2)) }}</div>

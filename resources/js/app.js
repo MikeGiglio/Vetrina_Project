@@ -428,7 +428,7 @@ if (bookingForm) {
 
         // Legge stringhe tradotte dai data-attributes del form
         const d = bookingForm.dataset;
-        const waHello     = d.waHello     || 'Ciao! 👋 Vorrei prenotare *Mau House 44*.';
+        const waHello     = d.waHello     || 'Ciao! 👋 Vorrei prenotare *My House 44*.';
         const waArrival   = d.waArrival   || '📅 *Arrivo:*';
         const waDeparture = d.waDeparture || '📅 *Partenza:*';
         const waNights    = d.waNights    || 'notti';
@@ -477,8 +477,8 @@ if (bookingForm) {
         }
 
         if (channel === 'email') {
-            const email   = d.email || 'mau.house44@gmail.com';
-            const subject = d.emailSubject || 'Richiesta prenotazione Mau House 44';
+            const email   = d.email || 'info@myhouse44.com';
+            const subject = d.emailSubject || 'Richiesta prenotazione My House 44';
             const mailto  = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(msg)}`;
             window.location.href = mailto;
         } else {
